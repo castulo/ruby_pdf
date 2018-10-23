@@ -91,5 +91,5 @@ end
 
 # All this files can be generated and stored temporarily in the server running rails,
 # and as soon as the user downloads the final PDF into its computer we can remove the
-PDFs from the server.
+# PDFs from the server.
 
