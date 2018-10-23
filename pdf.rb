@@ -13,7 +13,7 @@
 
 require 'rmagick'
 
-# The script needs the two arguments tbove o work, and initially the script was
+# The script needs the two arguments above o work, and initially the script was
 # intended to be used from the command line. But if the script is now to be
 # used within a rails app, it does not need the optparse gem since rails can
 # specify those arguments through a web page
@@ -64,7 +64,9 @@ loop do
   break if size < 3
     
   # if the size is bigger than 3MB, then first compress them by
-  # saving them as JPG again with lower quality
+  # saving them as JPG again with lower quality.
+  # we start with a quality of 100% and start reducing the quality by 10%
+  # each time until the file is smaller than 3 MB
   quality = quality > 10 ? quality - 10 : 10
   image_list.each_with_index do |page, i|
     page.write("#{options[:output]}-#{i + 1}.jpg") { self.quality = quality }
